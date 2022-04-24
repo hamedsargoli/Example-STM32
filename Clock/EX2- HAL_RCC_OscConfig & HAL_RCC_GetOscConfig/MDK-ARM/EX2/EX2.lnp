@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp
+"ex2\startup_stm32f407xx.o"
+"ex2\main.o"
+"ex2\stm32f4xx_it.o"
+"ex2\stm32f4xx_hal_msp.o"
+"ex2\stm32f4xx_hal_rtc.o"
+"ex2\stm32f4xx_hal_rtc_ex.o"
+"ex2\stm32f4xx_hal_rcc.o"
+"ex2\stm32f4xx_hal_rcc_ex.o"
+"ex2\stm32f4xx_hal_flash.o"
+"ex2\stm32f4xx_hal_flash_ex.o"
+"ex2\stm32f4xx_hal_flash_ramfunc.o"
+"ex2\stm32f4xx_hal_gpio.o"
+"ex2\stm32f4xx_hal_dma_ex.o"
+"ex2\stm32f4xx_hal_dma.o"
+"ex2\stm32f4xx_hal_pwr.o"
+"ex2\stm32f4xx_hal_pwr_ex.o"
+"ex2\stm32f4xx_hal_cortex.o"
+"ex2\stm32f4xx_hal.o"
+"ex2\stm32f4xx_hal_exti.o"
+"ex2\stm32f4xx_hal_tim.o"
+"ex2\stm32f4xx_hal_tim_ex.o"
+"ex2\system_stm32f4xx.o"
+--strict --scatter "EX2\EX2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "EX2.map" -o EX2\EX2.axf
