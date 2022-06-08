@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp
+"gpio-init\startup_stm32f407xx.o"
+"gpio-init\main.o"
+"gpio-init\stm32f4xx_it.o"
+"gpio-init\stm32f4xx_hal_msp.o"
+"gpio-init\stm32f4xx_hal_tim.o"
+"gpio-init\stm32f4xx_hal_tim_ex.o"
+"gpio-init\stm32f4xx_hal_rcc.o"
+"gpio-init\stm32f4xx_hal_rcc_ex.o"
+"gpio-init\stm32f4xx_hal_flash.o"
+"gpio-init\stm32f4xx_hal_flash_ex.o"
+"gpio-init\stm32f4xx_hal_flash_ramfunc.o"
+"gpio-init\stm32f4xx_hal_gpio.o"
+"gpio-init\stm32f4xx_hal_dma_ex.o"
+"gpio-init\stm32f4xx_hal_dma.o"
+"gpio-init\stm32f4xx_hal_pwr.o"
+"gpio-init\stm32f4xx_hal_pwr_ex.o"
+"gpio-init\stm32f4xx_hal_cortex.o"
+"gpio-init\stm32f4xx_hal.o"
+"gpio-init\stm32f4xx_hal_exti.o"
+"gpio-init\system_stm32f4xx.o"
+--strict --scatter "GPIO-INIT\GPIO-INIT.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIO-INIT.map" -o GPIO-INIT\GPIO-INIT.axf
