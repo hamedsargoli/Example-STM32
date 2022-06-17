@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp
+"gpio_write\startup_stm32f407xx.o"
+"gpio_write\main.o"
+"gpio_write\stm32f4xx_it.o"
+"gpio_write\stm32f4xx_hal_msp.o"
+"gpio_write\stm32f4xx_hal_tim.o"
+"gpio_write\stm32f4xx_hal_tim_ex.o"
+"gpio_write\stm32f4xx_hal_rcc.o"
+"gpio_write\stm32f4xx_hal_rcc_ex.o"
+"gpio_write\stm32f4xx_hal_flash.o"
+"gpio_write\stm32f4xx_hal_flash_ex.o"
+"gpio_write\stm32f4xx_hal_flash_ramfunc.o"
+"gpio_write\stm32f4xx_hal_gpio.o"
+"gpio_write\stm32f4xx_hal_dma_ex.o"
+"gpio_write\stm32f4xx_hal_dma.o"
+"gpio_write\stm32f4xx_hal_pwr.o"
+"gpio_write\stm32f4xx_hal_pwr_ex.o"
+"gpio_write\stm32f4xx_hal_cortex.o"
+"gpio_write\stm32f4xx_hal.o"
+"gpio_write\stm32f4xx_hal_exti.o"
+"gpio_write\system_stm32f4xx.o"
+--strict --scatter "GPIO_Write\GPIO_Write.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIO_Write.map" -o GPIO_Write\GPIO_Write.axf
