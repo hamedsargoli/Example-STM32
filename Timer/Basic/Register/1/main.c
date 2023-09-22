@@ -1,7 +1,8 @@
 /*****************************************************************
-- Project Example 1: 
+- Example 1: 
 						test basic timer with flag(SR)
-						Freg = 1Mhz & Time updtae = 1msec
+						Freg = 1Mhz
+						Time updtae = 1msec
 - Date: 2023-09-17
 - Directed by: Hamed Sargoli
 
@@ -20,9 +21,11 @@ int main(void)
 {
 	//Variable
 	int timercounter = 0;
+	
 	//GPIO Config(LED)
 	clockON_PORT();
 	config_port();
+	
 	//Timer Config
 	RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;					//clock Timer6 ON
 	TIM6->ARR = 999;  													//Auto Reload Register = wanted number - 1  ||  1ms = 1us * (999+1)
@@ -39,22 +42,29 @@ int main(void)
 		}
 		
 		if(timercounter >= 2000)										
-			timercounter=0;
+			timercounter = 0;
 		else if(timercounter >= 1000)
 			reset_pin();														//OFF LED
-	}
-	
+	}//End While
+}//End Main
+
+
+//Run Clock GPIOB
+void clockON_PORT(void){
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;		//clock GPIOB ON
 }
 
+//Config GPIO PIN9 from GPIOB OUTPUT
 void config_port(void){
 	GPIOB->MODER |= GPIO_MODER_MODE9_0;			//output pin9 from port B
 }
+
+//PIN9 From GPIOB = 1
 void set_pin(void){
 	GPIOB->ODR |= GPIO_ODR_OD9;							//set_pin pin9 = high
 }
+
+//PIN9 From GPIOB = 0
 void reset_pin(void){
 	GPIOB->ODR &= ~GPIO_ODR_OD9;						//reset pin9 = low
-}
-void clockON_PORT(void){
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;		//clock GPIOB ON
 }
