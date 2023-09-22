@@ -1,5 +1,5 @@
 /*****************************************************************
-- Project Example 3: 
+- Example 3: 
 						test basic timer with flag(SR)
 						Freg(CK_CNT) = 1Mhz  
 					 	Time updtae = 0.1msec
@@ -24,16 +24,18 @@ int main(void)
 {
 	//Variable
 	int timercounter = 0;
+	
 	//GPIO Config(LED)
 	clockON_PORT();
 	config_port();
+	
 	//Timer Config
 	RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;					//clock Timer6 ON
 	TIM6->ARR = 999;  													//Auto Reload Register = wanted number - 1  ||  1ms = 1us * (999+1)
 	TIM6->PSC = 15;															//Prescaler register = wanted number - 1    ||  16MHz/(15+1)=1MHz
 	//***********************************************************************
 	TIM6->CR1 |= TIM_CR1_CEN | TIM_CR1_UDIS;	  //Enable Timer and Update disable
-	//TIM6->CR1 |= TIM_CR1_CEN;	  //Enable Timer
+	//TIM6->CR1 |= TIM_CR1_CEN;	  								//Enable Timer
 	//***********************************************************************
 	 	
 	while(1)
@@ -50,18 +52,25 @@ int main(void)
 			timercounter=0;
 		else if(timercounter >= 1000)
 			reset_pin();														//OFF LED
-	}
-}
+	}//end While
+}//end Main
 
+//Config GPIO PIN9 from GPIOB OUTPUT
 void config_port(void){
 	GPIOB->MODER |= GPIO_MODER_MODE9_0;					//output pin9 from port B
 }
+
+//PIN9 From GPIOB = 1
 void set_pin(void){
 	GPIOB->ODR |= GPIO_ODR_OD9;									//set_pin pin9 = high
 }
+
+//PIN9 From GPIOB = 0
 void reset_pin(void){
 	GPIOB->ODR &= ~GPIO_ODR_OD9;								//reset pin9 = low
 }
+
+//Run Clock GPIOB
 void clockON_PORT(void){
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;				//clock GPIOB ON
 }
