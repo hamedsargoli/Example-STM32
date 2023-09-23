@@ -60,8 +60,8 @@ int main(void)
 			HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);								//Toggle LED
 			timercounter=0;
 		}
-  }
-}
+  }//End While
+}//End main
 
 /**
   * @brief System Clock Configuration
