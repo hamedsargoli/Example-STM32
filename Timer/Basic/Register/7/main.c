@@ -1,12 +1,11 @@
 /*****************************************************************
-- Project Example 7: 
+- Example 7: 
 					  Intrupt Enable
 					* Test URS BIT (Line 44 , 61~65)
 						Freg(CK_CNT) = 250 Hz  
 					  
 - Date: 2023-09-19
 - Directed by: Hamed Sargoli
-
 *****************************************************************/
 //Header file
 #include "stm32f407xx.h"
@@ -14,6 +13,7 @@
 
 //Global Variable
 volatile int timercounter = 0;
+
 //function's
 void config_port(void);
 void set_pin(void);
@@ -81,16 +81,14 @@ void clockON_PORT(void){
 }
 
 
-
-
 //**********************************************************************
 /*------------------------------------------------------------------------------
-  Timer1 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
+  Timer6 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
  *------------------------------------------------------------------------------*/
 void TIM6_DAC_IRQHandler() 
 {
 	TIM6->SR &= ~TIM_SR_UIF;								//Reset Flag update for run intrupt next update
 	timercounter++;													//counter added one for on|off LED
 
-} // end TIM1_UP_IRQHandler
+} // end TIM6_UP_IRQHandler
 //**********************************************************************
