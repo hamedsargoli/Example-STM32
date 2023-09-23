@@ -1,12 +1,11 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : Project Example 12 
+  * @file           : Example 12 
   * @brief          : Intrupt Enable Timer 6
 *****************************************************************
 						Freg(CK_CNT) = 1 MHz  
 					 	Time updtae(LED Blink)  = 100 msec 
-					  
 - Date: 2023-09-21
 - Directed by: Hamed Sargoli
 *****************************************************************/
@@ -16,7 +15,7 @@
 #include "main.h"
 
 /* USER CODE BEGIN PTD */
-int timercounter = 0;
+volatile int timercounter = 0;
 /* USER CODE END PTD */
 
 /* Private variables ---------------------------------------------------------*/
@@ -49,13 +48,12 @@ int main(void)
 	HAL_TIM_Base_Start_IT(&htim6);																		//start timer 6
   /* USER CODE END 2 */
 
-
   while (1)
   {
     /* USER CODE END WHILE */
 		if(timercounter == 100)
 		{
-			HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
+			HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);										//Toggle LED
 			timercounter = 0;
 		}//end if
   }//end while
