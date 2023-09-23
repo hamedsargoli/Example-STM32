@@ -4,5 +4,6 @@
 - Freg(CK_CNT) = 250 Hz  for Timer 6 and 7
 
 # Video:
-![Action](https://github.com/hamedsargoli/Example-STM32/tree/master/Timer/Basic/Register/8/Gif/animation.gif)
+![Action](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/Register/8/Gif/Action.gif)
 
+[Link](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/Register/8/Gif/Action.gif)
