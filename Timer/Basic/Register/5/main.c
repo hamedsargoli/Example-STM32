@@ -1,5 +1,5 @@
 /*****************************************************************
-- Project Example 5: 
+- Example 5: 
 					* Intrupt Enable(Line's 41 , 47  , 90~98)
 								(1) enable handler intrupt for Timer 6
 								(2) UIE bit = 1 for enable intrupt after the ON Clock Timer
@@ -14,7 +14,6 @@
 *****************************************************************/
 //Header file
 #include "stm32f407xx.h"
-#include "stddef.h"
 
 //Global Variable
 volatile int timercounter = 0;
@@ -35,7 +34,6 @@ int main(void)
 	//----------------------------------------------------------------------
 	//Timer Config
 	//----------------------------------------------------------------------
-	
 	//**********************************************************************
 	// Initialize the interrupt (constant import from stm32f4xx.h)
 	__NVIC_EnableIRQ(TIM6_DAC_IRQn);
@@ -47,7 +45,7 @@ int main(void)
 	TIM6->DIER |= TIM_DIER_UIE;									//Enable Intrupt
 	//**********************************************************************
 	
-	TIM6->ARR = 2499;  												  	//Auto Reload Register = wanted number - 1  ||  10s = 4ms * (2499+1)
+	TIM6->ARR = 2499;  												  //Auto Reload Register = wanted number - 1  ||  10s = 4ms * (2499+1)
 	TIM6->PSC = 63999;											  	//Prescaler register = wanted number - 1    ||  250Hz = 16MHz/(63999+1)
 	
 	
@@ -61,26 +59,32 @@ int main(void)
 		if(timercounter > 1)
 		{			
 			timercounter=0;
-			reset_pin();														//OFF LED
+			reset_pin();														 //OFF LED
 		}
 		else if(timercounter > 0)
-			set_pin();															//on LED
+			set_pin();															 //on LED
 		
 	}//end while
 }//end main
 
-
+//Config GPIO PIN9 from GPIOB OUTPUT
 void config_port(void){
-	GPIOB->MODER |= GPIO_MODER_MODE9_0;					//output pin9 from port B
+	GPIOB->MODER |= GPIO_MODER_MODE9_0;					 //output pin9 from port B
 }
+
+//PIN9 From GPIOB = 1
 void set_pin(void){
-	GPIOB->ODR |= GPIO_ODR_OD9;									//set_pin pin9 = high
+	GPIOB->ODR |= GPIO_ODR_OD9;									 //set_pin pin9 = high
 }
+
+//PIN9 From GPIOB = 0
 void reset_pin(void){
-	GPIOB->ODR &= ~GPIO_ODR_OD9;								//reset pin9 = low
+	GPIOB->ODR &= ~GPIO_ODR_OD9;								 //reset pin9 = low
 }
+
+//Run Clock GPIOB
 void clockON_PORT(void){
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;				//clock GPIOB ON
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;				 //clock GPIOB ON
 }
 
 
@@ -88,11 +92,11 @@ void clockON_PORT(void){
 
 //**********************************************************************
 /*------------------------------------------------------------------------------
-  Timer1 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
+  Timer6 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
  *------------------------------------------------------------------------------*/
 void TIM6_DAC_IRQHandler() 
 {
-	TIM6->SR &= ~TIM_SR_UIF;								//Reset Flag update for run intrupt next update
-	timercounter++;													//counter added one for on|off LED
-} // end TIM1_UP_IRQHandler
+	TIM6->SR &= ~TIM_SR_UIF;								     //Reset Flag update for run intrupt next update
+	timercounter++;															 //counter added one for on|off LED
+} // end TIM6_UP_IRQHandler
 //**********************************************************************
