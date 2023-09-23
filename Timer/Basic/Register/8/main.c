@@ -1,5 +1,5 @@
 /*****************************************************************
-- Project Example 8: Increase the time using the OPM feature in timer 7 ( 4 secend for blinking led)
+- Example 8: Increase the time using the OPM feature in timer 7 ( 4 secend for blinking led)
 					  Intrupt Enable Timer 6 and 7
 					* One Pulse Mode ACtive for Timer 7
 						Freg(CK_CNT) = 250 Hz  for Timer 6 and 7 
@@ -10,7 +10,6 @@
 *****************************************************************/
 //Header file
 #include "stm32f407xx.h"
-#include "stddef.h"
 
 //Global Variable
 volatile int timercounter = 0 , OPMCounter = 0;
@@ -64,9 +63,6 @@ int main(void)
 		else if(timercounter >= 1)
 			set_pin();															//on LED
 		
-		//**********************************************************************************************
-		//**********************************************************************************************
-		
 	}//end while
 }//end main
 
@@ -90,12 +86,12 @@ void clockON_PORT(void){
  *------------------------------------------------------------------------------*/
 void TIM6_DAC_IRQHandler() 
 {
-	TIM6->SR &= ~TIM_SR_UIF;								//Reset Flag update for run intrupt next update
-	OPMCounter++;													  //for extra time
+	TIM6->SR &= ~TIM_SR_UIF;										//Reset Flag update for run intrupt next update
+	OPMCounter++;													 		  //for extra time
 	if(OPMCounter > 3)
 	{
-		OPMCounter=0;													//
-		TIM7->CR1 |= TIM_CR1_CEN;							//enable timer 7(OPM bit = 1)
+		OPMCounter=0;													
+		TIM7->CR1 |= TIM_CR1_CEN;									//enable timer 7(OPM bit = 1)
 	}
 } // end TIM6
 
@@ -105,6 +101,6 @@ void TIM6_DAC_IRQHandler()
 
 void TIM7_IRQHandler() 
 {
-	TIM7->SR &= ~TIM_SR_UIF;								//Reset Flag update for run intrupt next update
-	timercounter++;													//counter added one for on|off LED
+	TIM7->SR &= ~TIM_SR_UIF;										//Reset Flag update for run intrupt next update
+	timercounter++;															//counter added one for on|off LED
 } // end TIM7
