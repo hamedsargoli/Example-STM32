@@ -5,7 +5,8 @@
   * @brief          : test basic timer with flag(SR)
   ******************************************************************************
   * @attention
-  *	Freg = 1Mhz & Time updtae = 1msec
+  *	Freg = 1Mhz 
+	* Time updtae = 1msec
 	* LED Blinky in 1 Sec (with timercounter = 1000)
   *	Date: 2023-09-20
   * Directed by: Hamed Sargoli
