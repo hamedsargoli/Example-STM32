@@ -1,9 +1,9 @@
 /*****************************************************************
-- Project Example 4: 
+- Example 4: 
 						test basic timer with flag(SR)
 						Freg(CK_CNT) = 250 Hz  
 					 	Time updtae = 4 msec 
-					* UG bit = 1 | Software Update (Line53)(SEE Simulator)
+					* UG bit = 1 | Software Update (Line53)(SEE Simulator)_LED Blinking in 4 Sec
 - Date: 2023-09-18
 - Directed by: Hamed Sargoli
 
@@ -56,15 +56,22 @@ int main(void)
 
 }
 
+//Config GPIO PIN9 from GPIOB OUTPUT
 void config_port(void){
 	GPIOB->MODER |= GPIO_MODER_MODE9_0;					//output pin9 from port B
 }
+
+//PIN9 From GPIOB = 1
 void set_pin(void){
 	GPIOB->ODR |= GPIO_ODR_OD9;									//set_pin pin9 = high
 }
+
+//PIN9 From GPIOB = 0
 void reset_pin(void){
 	GPIOB->ODR &= ~GPIO_ODR_OD9;								//reset pin9 = low
 }
+
+//Run Clock GPIOB
 void clockON_PORT(void){
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;				//clock GPIOB ON
 }
