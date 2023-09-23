@@ -10,6 +10,7 @@
 ![Pic3](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/9(1)/GIF&PIC/Cubemx_3.png)
 
 # Video:
-![Action](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/Register/8/Gif/Action.gif)
-## [Link](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/Register/8/Gif/Action.gif)
+<video src="https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/9(1)/GIF&PIC/animation.gif.mp4" controls title="Title"></video>
+
+## [Link](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/9(1)/GIF&PIC/animation.gif.mp4)
 
