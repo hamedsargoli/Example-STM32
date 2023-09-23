@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : Project Example 14 
+  * @file           : Example 14 
   * @brief          : Intrupt Enable Timer 6 , 7
 *****************************************************************
 -	Increase the time using the OPM feature in timer 7 ( 5 secend for blinking led)
@@ -45,7 +45,8 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM6_Init();
   MX_TIM7_Init();
-  /* USER CODE BEGIN 2 */
+  
+	/* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim6);
 	HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */

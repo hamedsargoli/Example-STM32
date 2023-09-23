@@ -3,7 +3,7 @@
 - Freg(CK_CNT) = 250 Hz 
 
 ## Setting CubeMX
-![Pic1](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/16(6)/GIF&PIC/Cubemx_1.png)
+![Pic1](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/13(6)/GIF&PIC/Cubemx_1.png)
 
 ![Pic2](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/Basic/HALL/13(6)/GIF&PIC/Cubemx_2.png)
 
