@@ -1,12 +1,11 @@
 /*****************************************************************
-- Project Example 6: 
+- Example 6: 
 					  Intrupt Enable
 					* Test ARPE BIT in Simulation(check CNT Register and ARR Register ...)(Line 44 , 59~64 , 93)
 						Freg(CK_CNT) = 250 Hz  
 					  
 - Date: 2023-09-19
 - Directed by: Hamed Sargoli
-
 *****************************************************************/
 //Header file
 #include "stm32f407xx.h"
@@ -80,11 +79,9 @@ void clockON_PORT(void){
 }
 
 
-
-
 //**********************************************************************
 /*------------------------------------------------------------------------------
-  Timer1 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
+  Timer6 Update Interrupt Handler(in handler from Startup_STM32f407xx.s
  *------------------------------------------------------------------------------*/
 void TIM6_DAC_IRQHandler() 
 {
@@ -93,5 +90,5 @@ void TIM6_DAC_IRQHandler()
 	//***********************************************************************
 	CounterARPE *=2;	
 	//***********************************************************************
-} // end TIM1_UP_IRQHandler
+} // end TIM6_UP_IRQHandler
 //**********************************************************************

@@ -21,37 +21,36 @@ Target DLL:      Segger\JL2CM3.dll V2.99.38.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-C:\Users\User\Dropbox\Timer\Register\6\ex.uvprojx
+C:\Users\User\Documents\GitHub\Example-STM32\Timer\Basic\Register\6\ex.uvprojx
 Project File Date:  09/22/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.c(16): warning: no previous extern declaration for non-static variable 'timercounter' [-Wmissing-variable-declarations]
+main.c(15): warning: no previous extern declaration for non-static variable 'timercounter' [-Wmissing-variable-declarations]
 volatile int timercounter = 0 , CounterARPE = 1;
              ^
-main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 volatile int timercounter = 0 , CounterARPE = 1;
          ^
-main.c(16): warning: no previous extern declaration for non-static variable 'CounterARPE' [-Wmissing-variable-declarations]
+main.c(15): warning: no previous extern declaration for non-static variable 'CounterARPE' [-Wmissing-variable-declarations]
 volatile int timercounter = 0 , CounterARPE = 1;
                                 ^
-main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 volatile int timercounter = 0 , CounterARPE = 1;
          ^
-main.c(63): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+main.c(62): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
                 TIM6->ARR = (int)(0x4000 / CounterARPE);        //change ARR
                           ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-main.c(89): warning: no previous prototype for function 'TIM6_DAC_IRQHandler' [-Wmissing-prototypes]
+main.c(86): warning: no previous prototype for function 'TIM6_DAC_IRQHandler' [-Wmissing-prototypes]
 void TIM6_DAC_IRQHandler() 
      ^
-main.c(89): note: declare 'static' if the function is not intended to be used outside of this translation unit
+main.c(86): note: declare 'static' if the function is not intended to be used outside of this translation unit
 void TIM6_DAC_IRQHandler() 
 ^
 static 
 4 warnings generated.
 compiling main.c...
-compiling system_stm32f4xx.c...
 linking...
 Program Size: Code=692 RO-data=424 RW-data=4 ZI-data=1644  
 ".\Objects\ex1.axf" - 0 Error(s), 4 Warning(s).
@@ -80,12 +79,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
-      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
