@@ -1,12 +1,12 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : Project Example 13	
+  * @file           : Example 13	
   * @brief          : Intrupt Enable Timer 6
 *****************************************************************
 -	Test ARPE BIT in Simulation(check CNT Register and ARR Register ...)(Line 58~63)
 - Freg(CK_CNT) = 250 Hz 
-- Date: 2023-09-21
+- Date: 2023-09-22
 - Directed by: Hamed Sargoli
 *****************************************************************/
   
@@ -15,8 +15,8 @@
 #include "main.h"
 
 /* Private typedef -----------------------------------------------------------*/
-int timercounter = 0;
-int CounterARPE = 1;
+volatile int timercounter = 0;
+volatile int CounterARPE = 1;
 
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim6;
@@ -56,8 +56,7 @@ int main(void)
 		}
 		//***********************************************************************
 		if(CounterARPE == 4)
-			MODIFY_REG(TIM6->CR1, TIM_CR1_ARPE, TIM_AUTORELOAD_PRELOAD_DISABLE);			//function FORMAT_BCD SET register (disable buffer ARR)
-
+			MODIFY_REG(TIM6->CR1, TIM_CR1_ARPE, TIM_AUTORELOAD_PRELOAD_DISABLE);			//function for SET register (disable buffer ARR)
 		__HAL_TIM_SetAutoreload(&htim6,(int)(0x4000 / CounterARPE));								//Change ARR Register
 		//***********************************************************************
   }
