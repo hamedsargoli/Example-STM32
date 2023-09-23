@@ -53,7 +53,7 @@ int main(void)
   {
 		//***********************************************************************
 		if(__HAL_TIM_GET_COUNTER(&htim6) > 100)
-			TIM6->EGR |= TIM_EVENTSOURCE_UPDATE;
+			TIM6->EGR |= TIM_EVENTSOURCE_UPDATE;											//Software Update Enable | UG bit = 1
 		//***********************************************************************	
 		if(__HAL_TIM_GET_FLAG(&htim6 , TIM_FLAG_UPDATE))						//flag Check
 		{
@@ -65,8 +65,8 @@ int main(void)
 			HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);								//Toggle LED
 			timercounter=0;
 		}
-  }
-}
+  }//End While
+}//En Main
 
 /**
   * @brief System Clock Configuration
