@@ -1,5 +1,7 @@
 
-# General purpose Timer - interrupt up counter
+# General purpose Timer - interrupt down counter
+- Freg(CK_CNT) = 250 Hz  
+- Time updtae  = 5 sec 
 
 [YOUTUBE LINK](https://www.youtube.com/channel/UCddAFJfLx6xHNQk5NzUOOpw)
 
