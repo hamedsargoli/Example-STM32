@@ -1,7 +1,7 @@
 
 # General purpose Timer - interrupt up counter
 
-![YOUTUBE LINK](https://www.youtube.com/channel/UCddAFJfLx6xHNQk5NzUOOpw)
+[YOUTUBE LINK](https://www.youtube.com/channel/UCddAFJfLx6xHNQk5NzUOOpw)
 
 ## Setting CubeMX
 ![Pic1](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose/HALL/EX1/GIF&PIC/Cubemx_1.png)
