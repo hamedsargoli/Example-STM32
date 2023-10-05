@@ -1,6 +1,6 @@
 
-#  Capture on Timer 2 channel 1
-#  basic in Timer 5 for Blinking LED G
+#  Capture on Timer 2 channel 1 & basic in Timer 5 for Blinking LED G
+In this example, the time interval between pressing the key twice is read, and this time becomes the green LED flashing time.
 
 [YOUTUBE LINK](https://www.youtube.com/channel/UCddAFJfLx6xHNQk5NzUOOpw)
 
