@@ -1,5 +1,6 @@
 
-# General purpose Timer - interrupt up counter
+#  Capture on Timer 2 channel 1
+#  basic in Timer 5 for Blinking LED G
 
 [YOUTUBE LINK](https://www.youtube.com/channel/UCddAFJfLx6xHNQk5NzUOOpw)
 
@@ -13,6 +14,6 @@
 ![Pic4](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose/HALL/EX3/GIF&PIC/Cubemx_4.png)
 
 # Video:
-![Action](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose\HALL\EX3/GIF&PIC/Animation.gif)
-## [Link](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose\HALL\EX3/GIF&PIC/Animation.gif)
+![Action](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose/HALL/EX3/GIF&PIC/Animation.gif)
+## [Link](https://github.com/hamedsargoli/Example-STM32/blob/master/Timer/General_Purpose/HALL/EX3/GIF&PIC/Animation.gif)
 
